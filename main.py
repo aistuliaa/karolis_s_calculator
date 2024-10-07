@@ -15,9 +15,18 @@ class Calculator:
         except ZeroDivisionError:
             return None 
 
-    def mul(self) -> float:
-        ...
+def mul(self, other_number: float) -> float:
+        return self.number * other_number
 
-    def calculate(self) -> float:
-        ...
- 
+def calculate(self, other_number: float) -> float:
+    if self.symbol == '+':
+        return self.add(other_number)
+    elif self.symbol == '-':
+        return self.sub(other_number)
+    elif self.symbol == '*':
+        return self.mul(other_number)
+    elif self.symbol == '/':
+        return self.div(other_number)
+    else:
+        return None
+        
