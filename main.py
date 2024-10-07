@@ -3,18 +3,30 @@ class Calculator:
         self.symbol = symbol
         self.number = number
 
-    def add(self) -> float:
-        ...
+    def add(self, other_number: float) -> float:
+        return self.number + other_number
 
-    def sub(self) -> float:
-        ...
+    def sub(self, other_number: float) -> float:
+        return self.number - other_number
+    
+    def div(self, other_number: float) -> float:
+        try:
+            return self.number / other_number
+        except ZeroDivisionError:
+            return None 
 
-    def div(self) -> float:
-        ...
+def mul(self, other_number: float) -> float:
+        return self.number * other_number
 
-    def mul(self) -> float:
-        ...
-
-    def calculate(self) -> float:
-        ...
- 
+def calculate(self, other_number: float) -> float:
+    if self.symbol == '+':
+        return self.add(other_number)
+    elif self.symbol == '-':
+        return self.sub(other_number)
+    elif self.symbol == '*':
+        return self.mul(other_number)
+    elif self.symbol == '/':
+        return self.div(other_number)
+    else:
+        return None
+        
