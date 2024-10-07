@@ -9,8 +9,11 @@ class Calculator:
     def sub(self, other_number: float) -> float:
         return self.number - other_number
     
-    def div(self) -> float:
-        ...
+    def div(self, other_number: float) -> float:
+        try:
+            return self.number / other_number
+        except ZeroDivisionError:
+            return None 
 
     def mul(self) -> float:
         ...
